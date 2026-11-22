@@ -1,0 +1,86 @@
+/* style.css - page layout and chart styling. Colours match js/constants.js. */
+
+:root {
+  --bg: #FFF0F6;
+  --card: #FFFFFF;
+  --ink: #3D1A2E;
+  --quiet: #7A4D63;
+  --accent: #C2185B;
+  --grid: #EAE3E7;
+  --reference: #85808A;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.intro, main, footer {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.intro { padding-top: 48px; }
+.eyebrow, .scene-number { color: var(--accent); font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 0.05em; margin: 0; }
+h1 { font-size: 40px; line-height: 1.15; margin: 8px 0 16px; }
+h2 { font-size: 26px; line-height: 1.25; margin: 4px 0 8px; }
+.lead { color: var(--quiet); font-size: 20px; }
+
+.scene {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 28px 28px 16px;
+  margin: 32px 0;
+}
+
+/* The SVG fills the card width; its viewBox keeps the proportions on any screen. */
+.chart { margin: 16px 0 0; }
+.chart svg { width: 100%; height: auto; display: block; }
+
+/* Chart text: at least 14px when the chart is shown at full width (accessibility). */
+.axis text, .label, .label-quiet, .label-strong { font-size: 15px; fill: var(--quiet); }
+.axis-names text { font-size: 16px; fill: var(--ink); }
+.label { fill: var(--ink); }
+.label-strong { fill: var(--ink); font-weight: bold; }
+.axis path, .axis line { stroke: var(--reference); }
+.grid line { stroke: var(--grid); }
+.grid path { display: none; }
+.reference { stroke: var(--reference); stroke-dasharray: 5 5; stroke-width: 1.5; }
+.zero { stroke: var(--ink); stroke-width: 1.5; }
+
+/* a11y: a clear focus ring for keyboard users, and a hover cue for mouse users. */
+.mark { cursor: pointer; }
+.mark:hover { opacity: 0.85; }
+.mark:focus { outline: none; stroke: var(--ink); stroke-width: 3; }
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: var(--ink);
+  color: #FFFFFF;
+  font-size: 15px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  max-width: 280px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+.tooltip.visible { opacity: 1; }
+
+.empty { color: var(--quiet); font-style: italic; padding: 40px 0; text-align: center; }
+
+footer { color: var(--quiet); font-size: 14px; padding-bottom: 48px; }
+
+/* Phones: smaller headings so the text fits. */
+@media (max-width: 768px) {
+  h1 { font-size: 30px; }
+  h2 { font-size: 22px; }
+  .scene { padding: 20px 16px 8px; }
+}

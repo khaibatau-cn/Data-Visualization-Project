@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Beyond the Road Toll: Who Really Gets Hurt on Australian Roads</title>
+  <link rel="stylesheet" href="css/style.css">
+  <!-- D3 v7, the only chart library used -->
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</head>
+<body>
+  <header class="intro">
+    <p class="eyebrow">COS30045 Data Visualisation · Team Libertea</p>
+    <h1>Beyond the road toll: who really gets hurt on Australian roads</h1>
+    <p class="lead">For every road death, dozens more people end up in hospital. Data: BITRE, hospitalised injuries from road crashes, 2011–2021.</p>
+  </header>
+
+  <main>
+    <section class="scene" aria-labelledby="scene1-title">
+      <p class="scene-number">Scene 1 · The hook</p>
+      <h2 id="scene1-title">Road crash hospitalisations are flat, far above the 30% target</h2>
+      <p>39,505 people were hospitalised in 2021, 0.9% above the 2018–20 average.</p>
+      <figure class="chart" id="chart-hook"></figure>
+    </section>
+
+    <section class="scene" aria-labelledby="scene3-title">
+      <p class="scene-number">Scene 3 · The surprise</p>
+      <h2 id="scene3-title">Nearly half of cyclist injuries involve no collision at all</h2>
+      <p>At least 1 in 5 involve a car or van. About 23% are “other or unspecified”, so the car share is a minimum.</p>
+      <figure class="chart" id="chart-cyclists"></figure>
+    </section>
+
+    <section class="scene" aria-labelledby="scene3b-title">
+      <p class="scene-number">Scene 3 · The twist</p>
+      <h2 id="scene3b-title">In 2020, cyclists were the only group with more injuries</h2>
+      <p>Hover or tab to a bar for the counts behind each change.</p>
+      <figure class="chart" id="chart-change"></figure>
+    </section>
+  </main>
+
+  <footer>
+    <p>Source: BITRE, Hospitalised injuries from road crashes (September 2023), processed in KNIME. Charts built with D3.js v7.</p>
+  </footer>
+</body>
+</html>
